@@ -1,0 +1,14 @@
+{
+  "name": "academic-writing-skills",
+  "description": "Skills for academic research and writing",
+  "owner": {
+    "name": "aryand1"
+  },
+  "plugins": [
+    {
+      "name": "thesis-by-publication",
+      "source": "./plugins/thesis-by-publication",
+      "description": "Plan, check, and write the connecting material for a thesis by publication"
+    }
+  ]
+}

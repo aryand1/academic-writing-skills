@@ -1,0 +1,73 @@
+{
+  "_help": "Replace every TODO. Use null for a rule the policy does not set. Keys that start with an underscore are ignored by validate_plan.py.",
+  "_allowed_values": {
+    "paper.status": ["published", "accepted", "submitted", "in-preparation"],
+    "paper.version_in_thesis": ["version-of-record", "accepted-manuscript", "submitted-manuscript", "reformatted"],
+    "paper.contribution_statement.status": ["not-started", "drafted", "sent", "signed", "not-needed"],
+    "paper.permission.basis": ["open-license", "author-rights", "publisher-permission", "not-needed", "unknown"],
+    "paper.permission.status": ["not-checked", "requested", "confirmed", "not-needed"],
+    "chapter.type": ["introduction", "literature-review", "methods", "paper", "linking", "discussion", "conclusion", "appendix", "other"],
+    "chapter.linking": ["not-needed", "not-started", "drafted", "done"],
+    "rules.reformatting": ["as-published", "allowed", "required"]
+  },
+  "thesis": {
+    "title": "TODO",
+    "candidate": "TODO",
+    "degree": "TODO",
+    "institution": "TODO",
+    "central_claim": "TODO: one or two sentences"
+  },
+  "rules": {
+    "source": "TODO: policy name, section, and link",
+    "min_papers": "TODO",
+    "max_papers": "TODO",
+    "allowed_statuses": "TODO",
+    "min_published_or_accepted": "TODO",
+    "candidate_first_author_required": "TODO",
+    "papers_must_be_from_candidature": "TODO",
+    "contribution_statement_required": "TODO",
+    "co_author_signatures_required": "TODO",
+    "reformatting": "TODO",
+    "notes": []
+  },
+  "chapters": [
+    {"number": 1, "type": "introduction", "title": "Introduction", "draft_status": "not-started"},
+    {"number": 2, "type": "paper", "paper_id": "P1", "linking": "not-needed"},
+    {"number": 3, "type": "paper", "paper_id": "P2", "linking": "not-started"},
+    {"number": 4, "type": "conclusion", "title": "Conclusion", "draft_status": "not-started"}
+  ],
+  "papers": [
+    {
+      "id": "P1",
+      "title": "TODO",
+      "authors": ["TODO: candidate"],
+      "candidate_author_position": "TODO",
+      "venue": "TODO",
+      "status": "TODO",
+      "year": "TODO",
+      "doi": "TODO, or none",
+      "research_during_candidature": "TODO",
+      "chapter": 2,
+      "role_in_argument": "TODO: the question this paper answers and what later chapters take from it",
+      "version_in_thesis": "TODO",
+      "contribution_statement": {"status": "not-needed", "file": null},
+      "permission": {"basis": "unknown", "status": "not-checked", "condition": null, "source": null}
+    },
+    {
+      "id": "P2",
+      "title": "TODO",
+      "authors": ["TODO: candidate", "TODO: co-author"],
+      "candidate_author_position": "TODO",
+      "venue": "TODO",
+      "status": "TODO",
+      "year": "TODO",
+      "doi": "TODO, or none",
+      "research_during_candidature": "TODO",
+      "chapter": 3,
+      "role_in_argument": "TODO",
+      "version_in_thesis": "TODO",
+      "contribution_statement": {"status": "not-started", "file": null},
+      "permission": {"basis": "unknown", "status": "not-checked", "condition": null, "source": null}
+    }
+  ]
+}

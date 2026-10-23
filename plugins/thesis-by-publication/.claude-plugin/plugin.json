@@ -1,0 +1,12 @@
+{
+  "name": "thesis-by-publication",
+  "displayName": "Thesis by Publication",
+  "version": "0.1.0",
+  "description": "Plan, check, and write the connecting material for a thesis by publication: chapter plan, linking sections, contribution statements, permissions, and checks for repeated text and acronyms across papers.",
+  "author": {
+    "name": "aryand1"
+  },
+  "repository": "https://github.com/aryand1/academic-writing-skills",
+  "license": "MIT",
+  "keywords": ["thesis", "dissertation", "phd-by-publication", "academic-writing", "research"]
+}

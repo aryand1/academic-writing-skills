@@ -1,0 +1,46 @@
+[
+  {
+    "skills": ["assembling-thesis-by-publication"],
+    "query": "I'm doing a PhD by publication. Our graduate school policy says at least 3 papers, at least 2 of them published or accepted, I must be first author on every paper, and co-authored papers need an authorship statement signed by all authors. My papers: (1) 'Calibrating low-cost particulate sensors with a humidity correction', published 2023 under CC BY, me plus my two supervisors. (2) 'Six months of street-level particulate data from a 40-node sensor network', accepted, five authors, I'm second author because a postdoc led the analysis. (3) A policy paper I'm still writing alone. Set up my thesis plan and tell me what's missing.",
+    "files": [],
+    "expected_behavior": [
+      "Creates thesis-plan.json from assets/thesis-plan.template.json with all three papers and the rules min_papers 3, min_published_or_accepted 2, candidate_first_author_required true, contribution_statement_required true, and co_author_signatures_required true",
+      "Asks for the policy document or leaves rules.source as TODO instead of inventing a policy name or link",
+      "Runs scripts/validate_plan.py on the plan and reports its result",
+      "Reports that paper 2 breaks the first-author rule and advises asking the graduate school, without suggesting ways to reword or hide the author order",
+      "Notes that exactly two papers are published or accepted, which meets the minimum with no margin",
+      "Leaves the DOIs, venues, and co-author names it was not given as TODO instead of inventing them",
+      "Flags unsigned contribution statements for papers 1 and 2 and an unchecked permission for paper 2"
+    ]
+  },
+  {
+    "skills": ["assembling-thesis-by-publication"],
+    "query": "These three papers become chapters 3 to 5 of my thesis. Before I send the draft to my supervisor, check for text that repeats across them and for any acronym problems.",
+    "files": [
+      "evals/files/p1-calibration.md",
+      "evals/files/p2-deployment.md",
+      "evals/files/p3-policy.md"
+    ],
+    "expected_behavior": [
+      "Runs scripts/find_overlap.py on the three files",
+      "Reports one repeated passage of about 30 words between p1-calibration.md and p2-deployment.md (the Methods text beginning 'Each sensor was co-located with a reference monitor'), at lines 6-7 of both files",
+      "Runs scripts/check_acronyms.py on the three files",
+      "Reports that RMSE is defined as 'root mean square error' in p1-calibration.md and 'root mean squared error' in p2-deployment.md",
+      "Reports that 'convolutional neural network' is abbreviated CNN in p1-calibration.md and ConvNet in p3-policy.md",
+      "Reports ML used without a definition in p2-deployment.md and RMSE used without a definition in p3-policy.md",
+      "Asks whether the papers must appear as published, or gives handling options for both cases"
+    ]
+  },
+  {
+    "skills": ["assembling-thesis-by-publication"],
+    "query": "Write the preface that goes before chapter 4. Chapter 3 is my calibration paper (published 2023): a humidity correction cut sensor error by about a third in the lab, but we never tested it outdoors. Chapter 4 is the field paper (accepted): 40 sensors for six months, and the correction held for four months, then drifted. After acceptance we found and fixed a timestamp bug that changes one value in Table 2 slightly.",
+    "files": [],
+    "expected_behavior": [
+      "Writes a preface of roughly half a page to two pages that names the question chapter 3 left open (outdoor performance over time) and the question chapter 4 answers",
+      "Uses only the facts the user gave (about a third, 40 sensors, six months, drift after four months) and adds no new results",
+      "Uses a placeholder or TODO for the accepted paper's full citation instead of inventing a journal",
+      "Discloses the post-acceptance timestamp fix and says where the corrected Table 2 value is given",
+      "Points to the contribution statement and does not restate the paper's abstract"
+    ]
+  }
+]
