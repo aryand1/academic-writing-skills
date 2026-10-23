@@ -9,6 +9,11 @@
       "name": "thesis-by-publication",
       "source": "./plugins/thesis-by-publication",
       "description": "Plan, check, and write the connecting material for a thesis by publication"
+    },
+    {
+      "name": "conference-to-journal",
+      "source": "./plugins/conference-to-journal",
+      "description": "Plan and check the journal version of a conference paper"
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "conference-to-journal",
+  "displayName": "Conference to Journal",
+  "version": "0.1.0",
+  "description": "Plan and check the journal version of a conference paper: venue rules, section-by-section comparison, new-material estimate, required changes, and a drafted summary of differences.",
+  "author": {
+    "name": "aryand1"
+  },
+  "repository": "https://github.com/aryand1/academic-writing-skills",
+  "license": "MIT",
+  "keywords": ["journal-extension", "conference-paper", "academic-writing", "research", "publishing"]
+}

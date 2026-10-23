@@ -1,0 +1,40 @@
+[
+  {
+    "skills": ["extending-conference-papers"],
+    "query": "I'm extending my conference paper into a journal article. The journal follows Springer's rule for extended proceedings papers. Here are both versions. Is it extended enough, and can you draft the summary of differences?",
+    "files": ["evals/files/conf-paper.md", "evals/files/journal-draft.md"],
+    "expected_behavior": [
+      "Runs scripts/compare_versions.py on the two files with --threshold 30",
+      "Reports an overall new-text estimate of about 47 percent (between 40 and 55) and says it meets 30 percent as a text estimate only, not as proof of compliance",
+      "Identifies 'Adaptive threshold' and 'Field evaluation' as entirely new sections, and 'Method' and 'Evaluation' as carried over unchanged",
+      "Flags that about three quarters of the abstract is carried over word for word and recommends rewriting it",
+      "Flags that the draft has no sentence disclosing the conference paper, although the paper appears in the references, and drafts a disclosure for the introduction",
+      "Drafts a summary of differences that lists the adaptive threshold with its false alarm bound and the six-week field deployment, using only numbers that appear in the draft",
+      "Mentions Springer's requirement for an explicit statement about the increment, or recommends checking the journal's own policy"
+    ]
+  },
+  {
+    "skills": ["extending-conference-papers"],
+    "query": "My 6-page ACM conference paper on a cache replacement policy got invited to a special issue of extended best papers. I haven't started the journal version. What should I add, and what will the editors expect?",
+    "files": [],
+    "expected_behavior": [
+      "Asks for or looks up the special issue call and the journal's policy, noting that a special issue call often sets its own rules",
+      "Mentions ACM's general guideline of at least 25 percent new material and says editors judge new contributions, not added length",
+      "Asks for the paper's limitations, future work, or reviews to find extension candidates instead of inventing results",
+      "Lists the required changes: a new or different title, a rewritten abstract, a citation and disclosure of the conference paper, and updated related work",
+      "Notes that ACM lets authors reuse their own text in a new work with a citation and the DOI of the version of record",
+      "Does not write a summary of differences with invented content"
+    ]
+  },
+  {
+    "skills": ["extending-conference-papers"],
+    "query": "We're extending our 8-page IEEE conference paper for IEEE Transactions on Wireless Communications. My coauthor says IEEE requires exactly 30% new content. Is that right, and what do we need to submit?",
+    "files": [],
+    "expected_behavior": [
+      "Explains that IEEE has no single IEEE-wide percentage and that ComSoc journals require substantial differences judged by the editor, describing the 30 percent figure as an old rule",
+      "Lists the ComSoc items: cite the conference version in the submission system and in the paper, use an at least slightly different title, and upload a summary of differences because the conference paper is 8 pages or longer",
+      "Recommends confirming the current policy on the journal's own page",
+      "Does not present any numeric threshold as official IEEE policy"
+    ]
+  }
+]

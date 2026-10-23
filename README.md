@@ -13,6 +13,23 @@ A thesis by publication (also called a PhD by publication or an article-based di
 
 It never fills in a university rule, DOI, author order, co-author approval, or permission from memory. Unknown values stay marked TODO.
 
+## conference-to-journal
+
+Turning a conference paper into a journal article means meeting the journal's rules for extended papers: often a share of new material, a different title, a rewritten abstract, and a cited and disclosed conference paper, plus a summary of differences for the editor. This skill helps Claude with that work:
+
+- It finds the venue's rules, starting from a sourced table of publisher policies and then checking the journal's current policy.
+- It compares the conference and journal versions section by section with a script and estimates the share of new text.
+- It checks the required changes and drafts the summary of differences, the introduction disclosure, and the cover letter paragraph.
+
+It never treats a percentage as proof of compliance, and it never suggests rewording old text to lower a similarity score.
+
+Install in Claude Code after adding the marketplace: `/plugin install conference-to-journal@academic-writing-skills`. To try the script directly:
+
+```
+cd plugins/conference-to-journal/skills/extending-conference-papers
+python scripts/compare_versions.py evals/files/conf-paper.md evals/files/journal-draft.md --threshold 30
+```
+
 ## Install
 
 Claude Code, as a plugin:
